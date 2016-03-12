@@ -1,0 +1,33 @@
+<%= form_for(@cafe) do |f| %>
+  <% if @cafe.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@cafe.errors.count, "error") %> prohibited this cafe from being saved:</h2>
+
+      <ul>
+      <% @cafe.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nama %><br>
+    <%= f.text_field :nama %>
+  </div>
+  <div class="field">
+    <%= f.label :alamat %><br>
+    <%= f.text_field :alamat %>
+  </div>
+  <div class="field">
+    <%= f.label :phone %><br>
+    <%= f.text_field :phone %>
+  </div>
+  <div class="field">
+    <%= f.label :website %><br>
+    <%= f.text_field :website %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
